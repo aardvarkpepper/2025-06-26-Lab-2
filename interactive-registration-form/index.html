@@ -22,19 +22,19 @@
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" minlength="8" required>
+        <input type="password" id="password" name="password" minlength="8" pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$' required>
         <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number.</small>
         <span class="error-message" id="passwordError"></span>
       </div>
       <div class="form-group">
         <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$' required>
         <span class="error-message" id="confirmPasswordError"></span>
       </div>
       <button type="submit">Register</button>
     </form>
   </div>
-  <button type="click" id="removeUsernameFromStorage">Remove username from localStorage</button>
+  <button type="click" id="removeUsernameFromStorage">Remove Username From localStorage</button>
   <script src="script.js"></script>
 </body>
 </html>
