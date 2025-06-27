@@ -88,11 +88,18 @@ passwordInput.addEventListener('input', (event) => {
   passwordError.textContent = passwordInput.validationMessage;
 });
 confirmPasswordInput.addEventListener('input', (event) => {
-  //minlength="8" required>
-  // <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number
+  if (confirmPasswordInput.value !== passwordInput.value) {
+    confirmPasswordInput.setCustomValidity('Please re-enter password; passwords do not currently match.')
+  } else {
+    confirmPasswordInput.setCustomValidity('');
+  }
+  confirmPasswordError.textContent = confirmPasswordInput.validationMessage;
 });
 
-registrationForm.addEventListener('submit', (event) => { });
+registrationForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // send to localstorage.
+});
 
 removeUsernameFromStorage.addEventListener('click', (event) => {
   // localStorage.setItem('hamster', 'whatever');
