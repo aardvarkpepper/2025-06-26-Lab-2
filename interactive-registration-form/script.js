@@ -85,14 +85,20 @@ let usernamestored = null;
 
 
 
+const retrieveData = () => {
+  try {
+    usernamestored = JSON.parse(localStorage.getItem('appSettings')); // technically JSON.parse not needed as it's a string, but eh.
+  } catch (errorMessage) {
+    console.error('Error parsing settings from localStorage:', errorMessage);
+    usernamestored = null; // or set to default settings
+  }
 
-try {
-  usernamestored = JSON.parse(localStorage.getItem('appSettings')); // technically JSON.parse not needed as it's a string, but eh.
-} catch (errorMessage) {
-  console.error('Error parsing settings from localStorage:', errorMessage);
-  usernamestored = null; // or set to default settings
+  if (usernamestored) {
+    username.value = usernamestored;
+  }
 }
- 
-if (usernamestored) {
-  username.value = usernamestored;
-}
+
+document.addEventListener("DOMContentLoaded", function () {
+  retrieveData();
+  // fillTable(tasklist);
+});
