@@ -51,6 +51,8 @@ const confirmPasswordInput = document.getElementById('confirmPassword');
 const confirmPasswordError = document.getElementById('confirmPasswordError');
 const registrationForm = document.getElementById('registrationForm');
 
+const removeUsernameFromStorage = document.getElementById('removeUsernameFromStorage');
+
 let usernamestored = null;
 
 usernameInput.addEventListener('input', (event) => {
@@ -71,6 +73,12 @@ confirmPasswordInput.addEventListener('input', (event) => {
 });
 
 registrationForm.addEventListener('submit', (event) => {});
+
+removeUsernameFromStorage.addEventListener('click', (event) => {
+  // localStorage.setItem('hamster', 'whatever');
+  // localStorage.getItem('hamster');
+  // localStorage.removeItem('hamster');
+});
 
 
 const retrieveData = () => {
