@@ -42,17 +42,33 @@ Edge Cases: Think about what happens if a user tries to bypass validation (thoug
 */
 
 const usernameInput = document.getElementById('username');
+const usernameError = document.getElementById('usernameError');
 const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
 const passwordInput = document.getElementById('password');
+const passwordError = document.getElementById('passwordError');
 const confirmPasswordInput = document.getElementById('confirmPassword');
+const confirmPasswordError = document.getElementById('confirmPasswordError');
 const registrationForm = document.getElementById('registrationForm');
 
 let usernamestored = null;
 
-usernameInput.addEventListener('input', (event) => {});
+usernameInput.addEventListener('input', (event) => {
+  //console.log('username aEL triggered');
+  // We are explicitly instructed to use 'input'. Selecting the field then moving away, or even pressing enter, or pressing submit on the form, does not trigger this event listener.  Only when a character is entered does this trigger.  I suppose I could put in an event listener for blur or something too but eh.
+  if (usernameInput.validity.valueMissing) {
+    usernameInput.setCustomValidity(`Please enter a user name, like 'ranchpizzalover1'`);
+  } else {
+    usernameInput.setCustomValidity('');
+  }
+  usernameError.textContent = usernameInput.validationMessage;
+});
 emailInput.addEventListener('input', (event) => {});
 passwordInput.addEventListener('input', (event) => {});
-confirmPasswordInput.addEventListener('input', (event) => {});
+confirmPasswordInput.addEventListener('input', (event) => {
+  //minlength="8" required>
+        // <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number
+});
 
 registrationForm.addEventListener('submit', (event) => {});
 

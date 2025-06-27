@@ -30,4 +30,6 @@ https://www.w3schools.com/jsref/event_onchange.asp
 https://www.w3schools.com/jsref/dom_obj_event.asp
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/
 https://regexr.com/
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
 
