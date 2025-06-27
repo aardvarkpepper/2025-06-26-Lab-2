@@ -31,5 +31,8 @@ https://www.w3schools.com/jsref/dom_obj_event.asp
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/
 https://regexr.com/
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
+https://regex101.com/
 
 

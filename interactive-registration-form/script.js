@@ -65,14 +65,34 @@ usernameInput.addEventListener('input', (event) => {
   }
   usernameError.textContent = usernameInput.validationMessage;
 });
-emailInput.addEventListener('input', (event) => {});
-passwordInput.addEventListener('input', (event) => {});
+emailInput.addEventListener('input', (event) => {
+  if (emailInput.validity.valueMissing) {
+    emailInput.setCustomValidity(`Please enter an email, like 'ranchpizzalover1@pizzalovers.com'`);
+  } else if (emailInput.validity.typeMismatcch) {
+    emailInput.setCustomValidity('Please enter a valid email address.')
+  } else {
+    emailInput.setCustomValidity('');
+  }
+  emailError.textContent = emailInput.validationMessage;
+});
+passwordInput.addEventListener('input', (event) => {
+  if (passwordInput.validity.valueMissing) {
+    passwordInput.setCustomValidity(`Please enter a password at least 8 characters long, including an uppercase, lowercase, and number.`);
+  } else if (passwordInput.validity.tooShort) {
+    passwordInput.setCustomValidity('Please enter a password of at least 8 characters.');
+  } else if (passwordInput.validity.patternMismatch) {
+    passwordInput.setCustomValidity('Pleae enter a password with at least one uppercase, one lowercase, and one number.')
+  } else {
+    passwordInput.setCustomValidity('');
+  }
+  passwordError.textContent = passwordInput.validationMessage;
+});
 confirmPasswordInput.addEventListener('input', (event) => {
   //minlength="8" required>
-        // <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number
+  // <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number
 });
 
-registrationForm.addEventListener('submit', (event) => {});
+registrationForm.addEventListener('submit', (event) => { });
 
 removeUsernameFromStorage.addEventListener('click', (event) => {
   // localStorage.setItem('hamster', 'whatever');
