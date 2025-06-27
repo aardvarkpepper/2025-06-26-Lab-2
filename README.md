@@ -12,14 +12,19 @@ HTML5 validation may be performed in HTML without use of Javascript.  Quite a lo
 
 3.  Explain how you used localStorage to persist and retrieve the username. What are the limitations of localStorage for storing sensitive data?
 
-localStorage will have been used to persist and retrieve username; once username entered it's stored in localStorage, on page load if the username input is empty it's populated with the localStorage data.  Any Javascript has access to localStorage, so sensitive data is not protected.
+localStorage was used to persist and retrieve username; once username entered it's stored in localStorage, on page load if username localStorage data exists, username input is populated with the localStorage data.  Any Javascript has access to localStorage, so sensitive data is not protected.
 
+I got an alert that the password I entered in the form was compromised.  As it wasn't sent online and nothing was done, either my computer is compromised or it's a Chrome bug.
+
+https://support.google.com/chrome/thread/260697326/password-you-used-was-found-in-a-data-breach?hl=en
 
 4.  Describe a challenge you faced in implementing the real-time validation and how you solved it.
 
-
+No difficulty in implementing field real-time validation.  For form validation, I initially used an object to set booleans on each field, but it wouldn't be triggered if "input" wasn't performed.  Specifically, it did not act as desired if input was initially valid, then changed to be invalid with Backspace, then form submitted. Updated to use .validity; resolved.
 
 5.  How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?
+
+Custom error messages displayed on key press (addEventListener 'input' action) so were up to date.  Error-messages were customized to give examples or specific feedback.
 
 ## Resources
 
