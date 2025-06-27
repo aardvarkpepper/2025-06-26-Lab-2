@@ -69,12 +69,16 @@ confirmPasswordInput.addEventListener('input', (event) => {
 
 registrationForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (finalValidation.username && finalValidation.email && finalValidation.password && finalValidation.confirmpassword) {
-    finalConfirm.textContent = "Input OK."
+  if (usernameInput.validity.valid && emailInput.validity.valid && password.validity.valid && passwordInput.value === confirmPassword.value) {
+    localStorage.setItem('lab52', usernameInput.value);
+    finalConfirm.textContent = "Input OK.  Username entered to localStorage."
+    usernameInput.value = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    confirmPasswordInput.value = "";
   } else {
-    finalConfirm.textContent = "Input not valid."
+    finalConfirm.textContent = "Input not valid.  Username not entered to localStorage."
   }
-  localStorage.setItem('lab52', usernameInput.value);
 });
 
 removeUsernameFromStorage.addEventListener('click', (event) => {
