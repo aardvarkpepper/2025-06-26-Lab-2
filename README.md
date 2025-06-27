@@ -20,7 +20,9 @@ https://support.google.com/chrome/thread/260697326/password-you-used-was-found-i
 
 4.  Describe a challenge you faced in implementing the real-time validation and how you solved it.
 
-No difficulty in implementing field real-time validation.  For form validation, I initially used an object to set booleans on each field, but it wouldn't be triggered if "input" wasn't performed.  Specifically, it did not act as desired if input was initially valid, then changed to be invalid with Backspace, then form submitted. Updated to use .validity; resolved.
+Getting regular expressions to work took more time than the entire rest of the lab.  Used regex101 in the end as regexr didn't work properly.  Looked up documentation, wrote expression, tested expression.
+
+Otherwise, no difficulty in implementing field real-time validation.  For form validation, I initially used an object to set booleans on each field, but it wouldn't be triggered if "input" wasn't performed.  Specifically, it did not act as desired if input was initially valid, then changed to be invalid with Backspace, then form submitted. Updated to use .validity; resolved.
 
 5.  How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?
 
