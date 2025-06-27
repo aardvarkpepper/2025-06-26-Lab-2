@@ -1,43 +1,3 @@
-{/* <div class="container">
-    <h1>Register</h1>
-    <form id="registrationForm" novalidate>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <span class="error-message" id="usernameError"></span>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error-message" id="emailError"></span>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number.</small>
-        <span class="error-message" id="passwordError"></span>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword">
-        <span class="error-message" id="confirmPasswordError"></span>
-      </div>
-      <button type="submit">Register</button>
-    </form>
-  </div> */}
-
-const registrationForm = document.getElementById('registrationForm');
-
-registrationForm.addEventListener('submit', (event) => {
-
-});
-
-registrationForm.addEventListener
-
-
-
-
-
 /**
 
 Implement real-time input validation using JavaScript event listeners (input event).
@@ -80,9 +40,21 @@ Test Local Storage Persistence: After a successful registration, refresh the pag
 Edge Cases: Think about what happens if a user tries to bypass validation (though client-side validation is mainly for UX, server-side is for security). What happens if localStorage is full or disabled (for this lab, we assume it works, but it’s a real-world consideration)?
 
 */
-const username = document.getElementById('username');
+
+const usernameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+const registrationForm = document.getElementById('registrationForm');
+
 let usernamestored = null;
 
+usernameInput.addEventListener('input', (event) => {});
+emailInput.addEventListener('input', (event) => {});
+passwordInput.addEventListener('input', (event) => {});
+confirmPasswordInput.addEventListener('input', (event) => {});
+
+registrationForm.addEventListener('submit', (event) => {});
 
 
 const retrieveData = () => {
